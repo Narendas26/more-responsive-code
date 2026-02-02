@@ -1,0 +1,73 @@
+.container>* 
+{
+     /*> দিয়ে ইমিডিয়েট চাইল্ডকে ধরার জন্য ব্যবহৃত হয়। আর * দিয়ে সকল ইমিডিয়েট চাইল্ডকে বোঝানো হয়। */            
+    border: 2px solid gold; 
+    background-color: blanchedalmond;
+    padding:30px;
+}
+
+header{
+    grid-area: header;  /*শুধু একটা গ্রিড এরিয়ার নাম দেয়া হচ্ছে*/
+}
+
+nav{
+    grid-area: navbar;
+}
+
+main{
+    grid-area: main;
+}
+
+#paragraph-section{
+    text-align: justify;
+}
+
+#sidebar{
+    grid-area: sidebar;
+}
+
+#advertise{
+    grid-area:advertise;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.container{
+    display: grid;
+    gap:20px;
+    grid-template-areas: 
+    "header header header header"
+    "navbar main main sidebar"
+    "navbar main main advertise"
+    "navbar footer footer advertise"
+    ;
+}
+
+
+@media screen and (max-width:576px){
+    /*For Mobile Device*/
+    .container{
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main"
+    "sidebar"
+    "advertise"
+    "footer";
+    }
+}
+
+@media screen and (min-width:577px) and (max-width:992px){
+     /*For Tablet Device*/
+    .container{
+        grid-template-areas:
+        "header header header"
+        "navbar navbar navbar"
+        "sidebar main main"
+        "advertise footer footer" 
+    }
+}
+
+
